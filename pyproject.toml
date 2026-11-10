@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "product2ad"
+version = "0.1.0"
+description = "Agent-first product ad planning and CPU motion graphics rendering"
+requires-python = ">=3.10"
+dependencies = ["Pillow>=10,<13"]
+[project.optional-dependencies]
+mcp = ["mcp>=1,<3"]
+test = ["pytest>=8,<10"]
+[project.scripts]
+product2ad = "product2ad.cli:main"
+product2ad-mcp = "product2ad.mcp_server:main"
+[tool.setuptools.packages.find]
+include = ["product2ad*"]
